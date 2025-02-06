@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 from comtypes import CLSCTX_ALL
 import threading
+import sys
 
 flag = False
-
 load_dotenv()
 
 genai.configure(api_key=os.getenv("API_KEY"))
@@ -95,8 +95,19 @@ def on_hotkey():
 def listen_keys():
     keyboard.wait('esc')
     
+def exit_program():
+    keyboard.unhook_all()
+    global flag
+    flag = True
+    volume.SetMute(0, None)
+    volume.SetMasterVolumeLevelScalar(1.0, None)
+    os._exit(0)    
+    os.kill(os.getpid(), 9)
+
 if __name__ == "__main__":
     listener_thread = threading.Thread(target=listen_keys, daemon=True)
     listener_thread.start()
     keyboard.add_hotkey('shift', on_hotkey)
+    keyboard.add_hotkey('ctrl+alt+h', exit_program)  
     keyboard.wait()
+    
