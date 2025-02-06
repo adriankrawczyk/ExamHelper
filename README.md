@@ -10,7 +10,9 @@ You can open it just double-clicking on server.py, it will be opened as proccess
 
 ## Installation
 
-Install Tesseract and have it in PATH in enviroment variables, here's nice tutorial: https://www.youtube.com/watch?v=HNCypVfeTdw&ab_channel=JayMartMedia
+Install Tesseract and have it in PATH in enviroment variables
+<br/>
+Here's nice tutorial: https://www.youtube.com/watch?v=HNCypVfeTdw&ab_channel=JayMartMedia
 <br/>
 <br/>
 Make sure you have Python installed, then install the required dependencies:
