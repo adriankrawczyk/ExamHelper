@@ -9,9 +9,7 @@ from dotenv import load_dotenv
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 from comtypes import CLSCTX_ALL
 import threading
-import sys
 
-flag = False
 load_dotenv()
 
 genai.configure(api_key=os.getenv("API_KEY"))
@@ -34,6 +32,8 @@ chat_session = model.start_chat(history=[])
 devices = AudioUtilities.GetSpeakers()
 interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
 volume = interface.QueryInterface(IAudioEndpointVolume)
+is_proccessing = False
+
 
 def capture_full_screen():
     with mss.mss() as sct:
@@ -59,7 +59,7 @@ def read_prompt_template():
         return file.read().strip()
 
 def set_volume_based_on_response(response):
-    global flag
+    global is_proccessing
     volume.SetMute(0, None)
     response = response.strip().upper()[0]
     if response == "1" or response == "A":
@@ -73,14 +73,14 @@ def set_volume_based_on_response(response):
     else:
         volume.SetMute(1, None)
         print("Unknown response. Volume not changed.")
-    flag = False
+    is_proccessing = False
 
 def on_hotkey():
-    global flag
+    global is_proccessing
     try:
-        if(flag):
+        if(is_proccessing):
             return
-        flag = True
+        is_proccessing = True
         volume.SetMute(1, None)
         img = capture_full_screen()
         text = ocr_image(img)
@@ -97,8 +97,8 @@ def listen_keys():
     
 def exit_program():
     keyboard.unhook_all()
-    global flag
-    flag = True
+    global is_proccessing
+    is_proccessing = True
     volume.SetMute(0, None)
     volume.SetMasterVolumeLevelScalar(1.0, None)
     os._exit(0)    
