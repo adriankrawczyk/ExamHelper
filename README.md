@@ -10,7 +10,7 @@ Install Tesseract and have it in PATH in enviroment variables, here's nice tutor
 Make sure you have Python installed, then install the required dependencies:
 
 ```bash
-pip install Flask keyboard google-generativeai pyperclip python-dotenv
+pip install Flask keyboard google-generativeai pyperclip python-dotenv pytesseract pillow mss pycaw comtypes
 ```
 After that, create an .env file with 
 ```bash
