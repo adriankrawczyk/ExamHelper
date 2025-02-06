@@ -1,5 +1,5 @@
 {clipboard_content}
 
 
-Znajdź tutaj pytanie jednokrotnego wyboru. Odpowiedz na to pytanie ZACZYNAJĄC od litery lub cyfry która była dobra np A lub 4.
+Znajdź tutaj pytanie jednokrotnego wyboru. Odpowiedz na to pytanie ZACZYNAJĄC od litery lub cyfry która była dobra np A lub 4. Jest to bardzo ważne żeby odpowiedź była w postaci A lub B lub C lub D lub 1 lub 2 lub 3 lub 4.
 
