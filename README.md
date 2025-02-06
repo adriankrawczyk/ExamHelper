@@ -19,7 +19,6 @@ Make sure you have Python installed, then install the required dependencies:
 pip install Flask keyboard google-generativeai pyperclip python-dotenv pytesseract pillow mss pycaw comtypes
 ```
 <br/>
-<br/>
 After that, create an .env file with 
 ```bash
 API_KEY=YOUR_API_KEY_HERE
