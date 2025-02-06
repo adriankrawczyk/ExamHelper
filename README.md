@@ -1,7 +1,7 @@
 # Exam Helper
 
 Exam Helper is a tool designed to assist with passing exams with single answer like A,B,C,D or 1,2,3,4 using AI. 
-It generates right answers and displays them by adjusting the sound bar level when the **Shift** key is pressed.
+It uses Tesseract OCR to get the question from your screen, generates right answers and then displays them by adjusting the sound bar level when the Shift key is pressed.
 
 ## Installation
 
