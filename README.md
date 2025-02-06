@@ -5,7 +5,7 @@ It uses Tesseract OCR to get the question from your screen, generates right answ
 
 ## Installation
 
-Install Tesseract, here's nice tutorial: https://www.youtube.com/watch?v=HNCypVfeTdw&ab_channel=JayMartMedia
+Install Tesseract and have it in PATH in enviroment variables, here's nice tutorial: https://www.youtube.com/watch?v=HNCypVfeTdw&ab_channel=JayMartMedia
 
 Make sure you have Python installed, then install the required dependencies:
 
