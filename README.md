@@ -6,7 +6,7 @@ Exam Helper is a tool designed to assist with passing exams with single answer l
 It uses Tesseract OCR to get the question from your screen, generates right answers with Gemini 2.0 Flash and then displays them by adjusting the sound bar level when the Shift key is pressed.
 <br/>
 <br/>
-You can open it just double-clicking on server.py, it will be opened as proccess. If you want to exit click CTRL+ALT+H.
+You can open it just double-clicking on server.pyw, it will be opened as proccess. If you want to exit click CTRL+ALT+H.
 
 ## Installation
 
